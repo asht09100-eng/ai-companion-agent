@@ -28,6 +28,28 @@ npm start
 
 启动脚本会自动加载项目根目录的 `.env`。没有 `OPENAI_API_KEY` 时，服务会使用本地占位回复，方便你先检查接口。
 
+## 更换模型 API
+
+默认使用 OpenAI Responses API：
+
+```env
+OPENAI_API_KEY=你的 key
+OPENAI_MODEL=gpt-4.1-mini
+OPENAI_BASE_URL=https://api.openai.com/v1
+OPENAI_API_STYLE=responses
+```
+
+如果你自己的接口兼容 OpenAI Chat Completions，把它改成：
+
+```env
+OPENAI_API_KEY=你的 key
+OPENAI_MODEL=你的模型名
+OPENAI_BASE_URL=https://你的接口域名/v1
+OPENAI_API_STYLE=chat
+```
+
+微信里如果想让模型实时生成回复，把 `WECHAT_FAST_REPLY=false`。如果服务或模型接口较慢，微信可能会超时，所以生产环境建议用常驻服务器。
+
 ## 一键本地启动微信接入
 
 在 Windows 上可以直接双击：

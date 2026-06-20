@@ -1,6 +1,8 @@
 PUBLIC_BASE_URL=https://your-render-domain.onrender.com
 OPENAI_API_KEY=your-openai-key
 OPENAI_MODEL=gpt-4.1-mini
+OPENAI_BASE_URL=https://api.openai.com/v1
+OPENAI_API_STYLE=responses
 WECHAT_TOKEN=666
 WECHAT_APP_ID=your-wechat-app-id
 WECHAT_APP_SECRET=your-wechat-app-secret

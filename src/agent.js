@@ -3,6 +3,8 @@ import { appendTurn, getHistory } from "./storage/memoryStore.js";
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4.1-mini";
+const OPENAI_BASE_URL = (process.env.OPENAI_BASE_URL || "https://api.openai.com/v1").replace(/\/$/, "");
+const OPENAI_API_STYLE = process.env.OPENAI_API_STYLE || "responses";
 
 export async function replyToUser({ userId = "default", message, channel = "web" }) {
   if (!message || !message.trim()) {
@@ -30,12 +32,20 @@ async function safeCallOpenAI({ history, channel, message }) {
 }
 
 async function callOpenAI({ history, channel }) {
+  if (OPENAI_API_STYLE === "chat") {
+    return callChatCompletions({ history, channel });
+  }
+
+  return callResponsesApi({ history, channel });
+}
+
+async function callResponsesApi({ history, channel }) {
   const input = history.map((turn) => ({
     role: turn.role,
     content: turn.content
   }));
 
-  const response = await fetch("https://api.openai.com/v1/responses", {
+  const response = await fetch(`${OPENAI_BASE_URL}/responses`, {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${OPENAI_API_KEY}`,
@@ -57,6 +67,41 @@ async function callOpenAI({ history, channel }) {
 
   const data = await response.json();
   return extractResponseText(data) || "我刚刚有点没组织好语言，但我还在这儿。你再跟我说一句，好吗？";
+}
+
+async function callChatCompletions({ history, channel }) {
+  const messages = [
+    {
+      role: "system",
+      content: `${buildInstructions()}\n\n当前渠道：${channel}`
+    },
+    ...history.map((turn) => ({
+      role: turn.role,
+      content: turn.content
+    }))
+  ];
+
+  const response = await fetch(`${OPENAI_BASE_URL}/chat/completions`, {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${OPENAI_API_KEY}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      model: OPENAI_MODEL,
+      messages,
+      temperature: 0.8,
+      max_tokens: channel === "phone" ? 220 : 520
+    })
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`Chat completions API error ${response.status}: ${text}`);
+  }
+
+  const data = await response.json();
+  return data.choices?.[0]?.message?.content?.trim() || "";
 }
 
 function extractResponseText(data) {
