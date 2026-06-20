@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">小河豚动漫女头像</title>
+  <desc id="desc">温柔害羞的动漫女孩头像</desc>
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="22%" r="78%">
+      <stop offset="0%" stop-color="#fff7d7"/>
+      <stop offset="48%" stop-color="#ffd7df"/>
+      <stop offset="100%" stop-color="#b9dfd2"/>
+    </radialGradient>
+    <linearGradient id="hair" x1="120" x2="398" y1="92" y2="386" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3d2c2a"/>
+      <stop offset="55%" stop-color="#5e3f3c"/>
+      <stop offset="100%" stop-color="#241918"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="206" x2="336" y1="168" y2="346" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe7d5"/>
+      <stop offset="100%" stop-color="#f7bfae"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#55362f" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="110" cy="118" r="42" fill="#fff9e9" opacity="0.55"/>
+  <circle cx="418" cy="390" r="64" fill="#fff9e9" opacity="0.28"/>
+  <circle cx="411" cy="126" r="18" fill="#b84654" opacity="0.18"/>
+
+  <g filter="url(#softShadow)">
+    <path d="M148 364c-31-50-37-117-18-174 21-64 68-104 129-104 69 0 119 47 134 115 13 59 3 118-31 165-29 41-79 67-110 67-35 0-79-27-104-69Z" fill="url(#hair)"/>
+    <path d="M168 231c-2-75 37-128 98-128 70 0 114 54 110 131-1 27-9 67-23 93-22 41-56 68-94 68-39 0-72-28-91-69-12-27-19-69-20-95Z" fill="url(#skin)"/>
+    <path d="M151 248c-19 1-31 18-25 40 5 21 22 34 39 31l-7-71Z" fill="#f3b7a7"/>
+    <path d="M374 248c19 1 31 18 25 40-5 21-22 34-39 31l7-71Z" fill="#f3b7a7"/>
+    <path d="M150 218c25-98 96-126 147-105 47 19 72 65 82 111-39-2-87-21-118-65-20 34-64 55-111 59Z" fill="url(#hair)"/>
+    <path d="M175 220c17-74 54-105 108-112-22 30-65 65-108 112Z" fill="#6a4945" opacity="0.48"/>
+    <path d="M260 112c56 28 88 65 100 114-44-13-79-49-100-114Z" fill="#2b1d1c" opacity="0.34"/>
+  </g>
+
+  <path d="M201 277c9-13 28-13 36 0" fill="none" stroke="#513c3a" stroke-width="10" stroke-linecap="round"/>
+  <path d="M291 277c9-13 28-13 36 0" fill="none" stroke="#513c3a" stroke-width="10" stroke-linecap="round"/>
+  <path d="M251 321c9 8 23 8 32 0" fill="none" stroke="#a65d67" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="192" cy="308" rx="28" ry="17" fill="#f08a9a" opacity="0.38"/>
+  <ellipse cx="336" cy="308" rx="28" ry="17" fill="#f08a9a" opacity="0.38"/>
+
+  <path d="M188 401c23 26 47 39 72 39 27 0 53-14 78-41 26 16 45 44 52 82H136c7-38 27-65 52-80Z" fill="#7aa48e"/>
+  <path d="M214 399c17 16 33 24 49 24 17 0 34-8 52-25l14 27c-20 23-42 34-66 34-24 0-46-11-65-34l16-26Z" fill="#fff7ef"/>
+  <path d="M252 371c-1 18-4 32-12 42 13 13 35 14 49 0-8-10-12-24-12-42h-25Z" fill="#efb8a8"/>
+
+  <path d="M91 410c26-10 43-31 48-62 12 24 10 50-6 76-15 2-29-2-42-14Z" fill="#b84654" opacity="0.72"/>
+  <path d="M421 410c-26-10-43-31-48-62-12 24-10 50 6 76 15 2 29-2 42-14Z" fill="#b84654" opacity="0.72"/>
+</svg>

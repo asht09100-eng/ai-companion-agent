@@ -33,10 +33,22 @@ form.addEventListener("submit", async (event) => {
 });
 
 function addBubble(role, text) {
-  const bubble = document.createElement("article");
+  const row = document.createElement("article");
+  row.className = `message-row ${role}-row`;
+
+  if (role === "assistant") {
+    const avatar = document.createElement("img");
+    avatar.className = "message-avatar";
+    avatar.src = "/avatar-xiaohetun.svg";
+    avatar.alt = "";
+    row.appendChild(avatar);
+  }
+
+  const bubble = document.createElement("div");
   bubble.className = `bubble ${role}`;
   bubble.textContent = text;
-  messages.appendChild(bubble);
+  row.appendChild(bubble);
+  messages.appendChild(row);
   messages.scrollTop = messages.scrollHeight;
 }
 
