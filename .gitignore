@@ -1,4 +1,5 @@
 .env
+RENDER_ENV_PRIVATE.txt
 .runtime/
 node_modules/
 server.err.log
