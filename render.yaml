@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: ai-companion-agent
+    env: node
+    plan: starter
+    buildCommand: ""
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
+      - key: WECHAT_FAST_REPLY
+        value: true
+      - key: WECHAT_PROACTIVE_ENABLED
+        value: true
+      - key: WECHAT_PROACTIVE_MIN_MINUTES
+        value: 45
+      - key: WECHAT_PROACTIVE_MAX_MINUTES
+        value: 180

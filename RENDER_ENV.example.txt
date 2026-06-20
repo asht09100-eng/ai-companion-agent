@@ -1,0 +1,11 @@
+PUBLIC_BASE_URL=https://your-render-domain.onrender.com
+OPENAI_API_KEY=your-openai-key
+OPENAI_MODEL=gpt-4.1-mini
+WECHAT_TOKEN=666
+WECHAT_APP_ID=your-wechat-app-id
+WECHAT_APP_SECRET=your-wechat-app-secret
+WECHAT_FAST_REPLY=true
+WECHAT_PROACTIVE_ENABLED=true
+WECHAT_PROACTIVE_MIN_MINUTES=45
+WECHAT_PROACTIVE_MAX_MINUTES=180
+ADMIN_TOKEN=change-this-before-use

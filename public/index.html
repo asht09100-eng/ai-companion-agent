@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>小河豚</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="chat" aria-label="聊天">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">AI Companion</p>
+            <h1>小河豚</h1>
+          </div>
+          <span class="status">在线</span>
+        </header>
+
+        <div id="messages" class="messages">
+          <article class="bubble assistant">
+            亲爱的，我在。今天想先跟小河豚说点什么？
+          </article>
+        </div>
+
+        <form id="chatForm" class="composer">
+          <input id="messageInput" name="message" autocomplete="off" placeholder="跟小河豚说一句..." />
+          <button type="submit">发送</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
